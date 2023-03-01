@@ -1,0 +1,155 @@
+@charset "utf-8";
+
+@import "../mixin";
+
+/* -----------------------------------------------
+ [js]
+-------------------------------------------------- */
+
+.js__link{
+	cursor: pointer;
+	*{
+		pointer-events: none;
+	}
+}
+
+// シンプル
+//----------------------------------------
+
+.js__simple{
+	transform-style: preserve-3d;
+	perspective: 5000px;
+	.js__simple-object{
+		will-change: transform;
+	}
+}
+
+// タイトル
+//----------------------------------------
+
+.js__tsc-title{
+	.js__split {
+		.js__clone {
+			position: relative;
+			z-index: 1;
+			&.last {
+				position: absolute;
+				left: 0;
+				top: 0;
+				z-index: 0;
+			}
+		}
+	}
+	.js__tsc-icon,
+	&-sub{
+		will-change: transform;
+	}
+}
+
+// センテンスの四角い要素
+//----------------------------------------
+
+.js__slanting{
+	position: relative;
+	&-main{
+		will-change: transform;
+		position: relative;
+	}
+	&-object{
+		pointer-events: none;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		border-color: rgba(255, 255, 255, 0.1);
+		border-width: 1px;
+		border-style: solid;
+		border-image: $border-gradient-alpha;
+		will-change: transform;
+	}
+}
+
+/* ----------------------------------
+
+ --  gradient
+
+---------------------------------- */
+
+.gradient-number_0{
+	@include title-gradient;
+	background-position: -30% 0;
+	&.is-done{
+		animation: text-gradient-anime0 1s $easing both;
+	}
+}
+.gradient-number_1{
+	@include title-gradient;
+	background-position: -30% 0;
+	&.is-done{
+		animation: text-gradient-anime1 1s $easing both;
+	}
+}
+.gradient-number_2{
+	@include title-gradient;
+	background-position: -30% 0;
+	&.is-done{
+		animation: text-gradient-anime2 1s $easing both;
+	}
+}
+.gradient-number_3{
+	@include title-gradient;
+	background-position: -30% 0;
+	&.is-done{
+		animation: text-gradient-anime3 1s $easing both;
+	}
+}
+.gradient-number_4{
+	@include title-gradient;
+	background-position: -30% 0;
+	&.is-done{
+		animation: text-gradient-anime4 1s $easing both;
+	}
+}
+.gradient-number_5{
+	@include title-gradient;
+	background-position: -30% 0;
+	&.is-done{
+		animation: text-gradient-anime5 1s $easing both;
+	}
+}
+.gradient-number_6{
+	@include title-gradient-reverse;
+	background-position: -30% 0;
+	&.is-done{
+		animation: text-gradient-anime6 1s $easing both;
+	}
+}
+.gradient-number_7{
+	@include title-gradient-reverse;
+	background-position: -30% 0;
+	&.is-done{
+		animation: text-gradient-anime7 1s $easing both;
+	}
+}
+.gradient-number_8{
+	@include title-gradient-reverse;
+	background-position: -30% 0;
+	&.is-done{
+		animation: text-gradient-anime8 1s $easing both;
+	}
+}
+.gradient-number_9{
+	@include title-gradient-reverse;
+	background-position: -30% 0;
+	&.is-done{
+		animation: text-gradient-anime9 1s $easing both;
+	}
+}
+.gradient-number_10{
+	@include title-gradient-reverse;
+	background-position: -30% 0;
+	&.is-done{
+		animation: text-gradient-anime10 1s $easing both;
+	}
+}

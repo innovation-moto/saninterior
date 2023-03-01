@@ -1,0 +1,802 @@
+@charset "utf-8";
+
+@import "../../mixin";
+
+#randd{
+  #p-loader {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    padding-left: 100%;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //background: #245287;
+    background: -moz-linear-gradient(left, rgba(36,82,135,0) 0%, rgba(36,82,135,1) 50%, rgba(36,82,135,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, rgba(36,82,135,0) 0%,rgba(36,82,135,1) 50%,rgba(36,82,135,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, rgba(36,82,135,0) 0%,rgba(36,82,135,1) 50%,rgba(36,82,135,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00245287', endColorstr='#245287',GradientType=1 ); /* IE6-9 */
+    canvas{
+      width:400px; height:150px;
+      display:block; margin:0 auto;background:rgb(36, 82, 135);
+    }
+  }
+}
+
+/* ----------------------------------
+
+ --  randd KV PC
+
+---------------------------------- */
+
+@media #{$pc-all} {
+  #randd {
+    #p-randd-kv {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      background: #245287 url(../img/randd/b-randd_kv_photo.jpg) no-repeat center;
+      background-size: cover;
+      overflow: hidden;
+      &__text{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 10;
+         display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      &__en{
+        font-size: 13px;
+        text-align: center;
+        font-weight: bold;
+        color: #fff;
+        @include font-en-bold;
+        letter-spacing: .55em;
+        margin-bottom: 30px;
+      }
+      &__jp{
+        font-size: 32px;
+        line-height: 2;
+        text-align: center;
+        font-weight: bold;
+        color: #fff;
+        letter-spacing: .55em;
+      }
+
+      &__bg-copy{
+       position: absolute;
+       left: 0;
+       right: 0;
+       top: 0;
+       bottom: 0;
+       z-index: 5;
+          background: url(../img/randd/b-randd_copy.svg) no-repeat center;
+        background-size: 1190px 294px;
+      }
+
+      &__scroll {
+        position: absolute;
+        bottom: 60px;
+        left: -60px;
+
+        span {
+          background: #062d9f;
+          color: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 180px;
+          height: 60px;
+          transform: rotate(90deg);
+          @include font-en-bold;
+          font-size: 10px;
+
+          &:after {
+            margin-left: 10px;
+            display: inline-block;
+            content: '';
+            width: 60px;
+            height: 1px;
+            background: url(../img/common/c-scroll_arrow.svg) no-repeat center;
+            background-size: 60px 1px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* ----------------------------------
+
+  --  top KV SMP
+
+ ---------------------------------- */
+
+@media #{$smp} {
+  #randd {
+    #p-randd-kv {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      background: #245287 url(../img/randd/b-randd_kv_photo_sp.jpg) no-repeat center;
+      background-size: cover;
+      overflow: hidden;
+
+      &__text{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 10;
+         display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 70px;
+      }
+      &__en{
+        font-size: 10px;
+        text-align: center;
+        font-weight: bold;
+        color: #fff;
+        @include font-en-bold;
+        letter-spacing: .55em;
+        margin-bottom: 28px;
+      }
+      &__jp{
+        font-size: 20px;
+        line-height: 1.5;
+        text-align: center;
+        font-weight: bold;
+        color: #fff;
+        //letter-spacing: .55em;
+      }
+
+      &__bg-copy{
+       position: absolute;
+       left: 0;
+       right: 0;
+       top: 0;
+       bottom: 70px;
+       z-index: 5;
+          background: url(../img/randd/b-randd_copy.svg) no-repeat center;
+        background-size: 339px 83.5px;
+      }
+
+      &__scroll {
+        position: absolute;
+        bottom: 133px;
+        left: -58px;
+
+        span {
+          background: #062d9f;
+          color: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 150px;
+          height: 35px;
+          transform: rotate(90deg);
+          @include font-en-bold;
+          font-size: 10px;
+
+          &:after {
+            margin-left: 10px;
+            display: inline-block;
+            content: '';
+            width: 40px;
+            height: 1px;
+            background: url(../img/common/c-scroll_arrow.svg) no-repeat center;
+            background-size: 40px 1px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+/* ----------------------------------
+
+ --  randd
+
+---------------------------------- */
+
+#randd {}
+
+/* ----------------------------------
+
+  --  PC
+
+ ---------------------------------- */
+
+@media #{$pc-all} {
+  #randd {
+    #p-randd-contents {
+      .p-randd-section {
+        position: relative;
+
+        &__inner {
+          margin: 0 auto;
+          width: 1080px;
+          position: relative;
+          z-index: 40;
+        }
+
+        &__title {
+          display: flex;
+          align-items: center;
+          position: relative;
+          padding-bottom: 8px;
+          margin-bottom: 60px;
+
+          .en {
+            @include font-en-serif;
+            font-size: 60px;
+            color: $key-color;
+          }
+
+          .jp {
+            margin-left: 30px;
+            font-size: 12px;
+            color: $key-color;
+            font-weight: bold;
+          }
+
+          .glitter {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            width: 37px;
+            height: 8px;
+            background: url(../img/common/c-h2_line.svg) no-repeat center;
+            background-size: 37px 8px;
+          }
+        }
+      }
+
+      .p-randd-headline{
+        padding: 240px 0;
+        z-index: 50;
+        .p-randd-section__inner{
+          width: 740px;
+          .headline {
+            font-size: 24px;
+            line-height: 44px;
+            font-weight: bold;
+            margin-bottom: 15px;
+          }
+          .text{
+            font-size: 17px;
+            line-height: 48px;
+          }
+        }
+      }
+
+      .p-randd-randd {
+        z-index: 30;
+        position: relative;
+        min-height: 700px;
+        margin-bottom: 250px;
+        &__bg1 {
+          position: absolute;
+          left: 0;
+          right: 50%;
+          top: -520px;
+          height: 1000px;
+          margin-right: 165px;
+          background: url(../img/randd/b-randd_bg_sky.jpg) no-repeat center bottom;
+          background-size: cover;
+          z-index: 3;
+        }
+
+        &__bg2 {
+          position: absolute;
+          top: 0;
+          right: 50%;
+          width: 640px;
+          height: 700px;
+          margin-right: -40px;
+          background: url(../img/randd/b-randd_photo_01.jpg) no-repeat center bottom;
+          background-size: cover;
+          z-index: 5;
+        }
+
+        &__bg3 {
+          position: absolute;
+          left: 50%;
+          margin-left: 5px;
+          top: 530px;
+          background: url(../img/randd/b-randd_text.png) no-repeat center;
+          width: 1202px;
+          height: 261px;
+          z-index: 2;
+        }
+
+        .p-randd-section__inner {
+          padding-top: 130px;
+          padding-left: 700px;
+
+          .mini-title {
+            display: flex;
+            align-items: center;
+            color: $key-color;
+            @include font-en-bold;
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 45px;
+
+            &:before {
+              content: '';
+              display: inline-block;
+              height: 2px;
+              width: 20px;
+              background: $key-color;
+              margin-right: 10px;
+            }
+          }
+
+          .headline {
+            font-size: 24px;
+            line-height: 40px;
+            font-weight: bold;
+          }
+
+          p.text {
+            margin-top: 20px;
+            font-size: 15px;
+            line-height: 30px;
+            text-align: justify;
+          }
+        }
+      }
+
+      .p-randd-existance {
+        z-index: 50;
+        position: relative;
+        min-height: 700px;
+        margin-bottom: 50px;
+        &__bg1 {
+          position: absolute;
+          right: 50%;
+          margin-right: -175px;
+          top: 365px;
+          background: url(../img/randd/b-existance_text.png) no-repeat center;
+          width: 874px;
+          height: 261px;
+          z-index: 2;
+        }
+
+        &__bg2 {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 640px;
+          height: 420px;
+          margin-left: -40px;
+          background: url(../img/randd/b-existance_photo_01.jpg) no-repeat center bottom;
+          background-size: cover;
+          z-index: 5;
+        }
+
+        &__bg3 {
+          position: absolute;
+          top: 500px;
+          left: 50%;
+          width: 640px;
+          height: 420px;
+          margin-left: -40px;
+          background: url(../img/randd/b-existance_photo_02.jpg) no-repeat center bottom;
+          background-size: cover;
+          z-index: 5;
+        }
+
+        .p-randd-section__inner {
+          padding-right: 700px;
+
+          .mini-title {
+            display: flex;
+            align-items: center;
+            color: $key-color;
+            @include font-en-bold;
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 45px;
+
+            &:before {
+              content: '';
+              display: inline-block;
+              height: 2px;
+              width: 20px;
+              background: $key-color;
+              margin-right: 10px;
+            }
+          }
+
+          .headline {
+            font-size: 24px;
+            line-height: 40px;
+            font-weight: bold;
+          }
+
+          p.text {
+            margin-top: 20px;
+            font-size: 15px;
+            line-height: 30px;
+            text-align: justify;
+          }
+        }
+      }
+
+      .p-randd-aimhigh {
+        z-index: 30;
+        position: relative;
+        padding-bottom: 240px;
+        padding-top: 680px;
+        &__bg1 {
+          position: absolute;
+          right: 0;
+          left: 50%;
+          margin-left: -680px;
+          top: 0;
+          height: 750px;
+          background: url(../img/randd/b-aimhigh_photo_01.jpg) no-repeat center bottom;
+          background-size: cover;
+          z-index: 5;
+        }
+
+        &__bg2 {
+          position: absolute;
+          left: 50%;
+          margin-left: 5px;
+          bottom: 150px;
+          background: url(../img/randd/b-aimhigh_text.png) no-repeat center;
+          width: 768px;
+          height: 111px;
+          z-index: 10;
+        }
+
+        .p-randd-section__inner {
+          background: #fff;
+          z-index: 8;
+          padding: 100px 170px;
+
+          .mini-title {
+            display: flex;
+            align-items: center;
+            color: $key-color;
+            @include font-en-bold;
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 40px;
+
+            &:before {
+              content: '';
+              display: inline-block;
+              height: 2px;
+              width: 20px;
+              background: $key-color;
+              margin-right: 10px;
+            }
+          }
+
+          .headline {
+            font-size: 40px;
+            font-weight: bold;
+          }
+
+          p.text {
+            margin-top: 30px;
+            font-size: 15px;
+            line-height: 30px;
+            text-align: justify;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+
+
+/* ----------------------------------
+
+  --  SMP
+
+ ---------------------------------- */
+
+@media #{$smp} {
+  #randd {
+    #p-randd-contents {
+      .p-randd-section {
+        position: relative;
+
+        &__inner {
+          margin: 0 25px;
+          position: relative;
+          z-index: 40;
+        }
+
+        &__title {
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          margin-bottom: 60px;
+
+          .en {
+            @include font-en-serif;
+            font-size: 40px;
+            letter-spacing: 0;
+            white-space: nowrap;
+            color: $key-color;
+          }
+
+          .jp {
+            margin-top: -5px;
+            font-size: 11px;
+            color: $key-color;
+            font-weight: bold;
+          }
+
+          .glitter {
+            margin-top: 10px;
+            content: '';
+            display: block;
+            width: 28.5px;
+            height: 6px;
+            background: url(../img/common/c-h2_line.svg) no-repeat center;
+            background-size: 28.5px 6px;
+          }
+        }
+      }
+
+      .p-randd-headline{
+        padding: 90px 0 145px;
+        z-index: 50;
+        .p-randd-section__inner{
+          .headline {
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.5;
+            margin-bottom: 10px;
+          }
+
+          .text{
+            font-size: 14px;
+            line-height: 30px;
+            text-align: justify;
+          }
+        }
+      }
+
+      .p-randd-randd {
+        z-index: 30;
+        position: relative;
+        margin-bottom: 92px;
+        &__bg1 {
+          position: absolute;
+          left: 0;
+          right: 50%;
+          top: -255px;
+          height: 500px;
+          margin-right: -48px;
+          background: url(../img/randd/b-randd_bg_sky.jpg) no-repeat center bottom;
+          background-size: cover;
+          z-index: 3;
+        }
+
+        &__bg2 {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          left: 25px;
+          height: 355px;
+          background: url(../img/randd/b-randd_photo_01.jpg) no-repeat center bottom;
+          background-size: cover;
+          z-index: 5;
+        }
+
+        &__bg3 {
+          position: absolute;
+          left: 50%;
+          margin-left: -87px;
+          top: 335px;
+          background: url(../img/randd/b-randd_text.png) no-repeat center;
+          background-size: 520.5px 113px;
+          width: 520.5px;
+          height: 113px;
+          z-index: 2;
+        }
+
+        .p-randd-section__inner {
+          padding-top: 390px;
+
+          .mini-title {
+            display: flex;
+            align-items: center;
+            color: $key-color;
+            @include font-en-bold;
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 30px;
+
+            &:before {
+              content: '';
+              display: inline-block;
+              height: 2px;
+              width: 13px;
+              background: $key-color;
+              margin-right: 10px;
+            }
+          }
+
+          .headline {
+            font-size: 18px;
+            font-weight: bold;
+          }
+
+          p.text {
+            margin-top: 10px;
+            font-size: 13px;
+            line-height: 25px;
+            text-align: justify;
+          }
+        }
+      }
+
+      .p-randd-existance {
+        z-index: 50;
+        position: relative;
+        margin-bottom: 92px;
+        &__bg1 {
+          position: absolute;
+          left: -5px;
+          top: 364px;
+          background: url(../img/randd/b-existance_text.png) no-repeat center;
+          background-size: 378px 112.5px;
+          width: 378px;
+          height: 112.5px;
+          z-index: 2;
+        }
+
+        &__bg2 {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          width: 270px;
+          height: 177px;
+          background: url(../img/randd/b-existance_photo_01.jpg) no-repeat center bottom;
+          background-size: cover;
+          z-index: 5;
+        }
+
+        &__bg3 {
+          position: absolute;
+          top: 202px;
+          left: 25px;
+          width: 270px;
+          height: 177px;
+          background: url(../img/randd/b-existance_photo_02.jpg) no-repeat center bottom;
+          background-size: cover;
+          z-index: 5;
+        }
+
+        .p-randd-section__inner {
+          padding-top: 415px;
+
+          .mini-title {
+            display: flex;
+            align-items: center;
+            color: $key-color;
+            @include font-en-bold;
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 30px;
+
+            &:before {
+              content: '';
+              display: inline-block;
+              height: 2px;
+              width: 20px;
+              background: $key-color;
+              margin-right: 10px;
+            }
+          }
+
+          .headline {
+            font-size: 18px;
+            font-weight: bold;
+          }
+
+          p.text {
+            margin-top: 10px;
+            font-size: 13px;
+            line-height: 25px;
+            text-align: justify;
+          }
+        }
+      }
+
+      .p-randd-aimhigh {
+        z-index: 30;
+        position: relative;
+        padding-bottom: 130px;
+        padding-top: 405px;
+        &__bg1 {
+          position: absolute;
+          right: 0;
+          left: 0;
+          top: 0;
+          height: 435px;
+          background: url(../img/randd/b-aimhigh_photo_01_sp.jpg) no-repeat center bottom;
+          //background-position: 15% 50%;;
+          background-size: cover;
+          z-index: 5;
+        }
+
+        &__bg2 {
+          position: absolute;
+          left: 50%;
+          margin-left: -156px;
+          bottom: 95px;
+          background: url(../img/randd/b-aimhigh_text.png) no-repeat center;
+          background-size: 332px 48px;
+          width: 332px;
+          height: 48px;
+          z-index: 10;
+        }
+
+        .p-randd-section__inner {
+          background: #fff;
+          z-index: 8;
+          padding: 37px 25px;
+
+          .mini-title {
+            display: flex;
+            align-items: center;
+            color: $key-color;
+            @include font-en-bold;
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 25px;
+
+            &:before {
+              content: '';
+              display: inline-block;
+              height: 2px;
+              width: 20px;
+              background: $key-color;
+              margin-right: 10px;
+            }
+          }
+
+          .headline {
+            font-size: 22px;
+            font-weight: bold;
+          }
+
+          p.text {
+            margin-top: 15px;
+            font-size: 13px;
+            line-height: 25px;
+            text-align: justify;
+          }
+        }
+      }
+
+    }
+  }
+}

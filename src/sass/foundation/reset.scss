@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+@import "../mixin";
+
+/* -----------------------------------------------
+ [1. Reset(リセット) + Base(ベース)]
+-------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css?family=Lora:400,400i|Muli:400,500,700');
+
+html * {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-webkit-appearance: none;
+	outline: none;
+	-moz-osx-font-smoothing:grayscale;
+	text-rendering : optimizeLegibility;
+	-webkit-text-rendering : optimizeLegibility;
+	-webkit-text-size-adjust: 100%;
+}
+
+html,body{
+	text-rendering : optimizeLegibility;
+	//overflow-scrolling: touch;
+	//-webkit-overflow-scrolling: touch;
+}
+
+html {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body {
+	@include font-gothic;
+	color: $font-color;
+	font-size: 16px;
+	line-height: 1.7;
+	-webkit-text-size-adjust: 100%;
+}
+html,body,div,span,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,acronym,address,code,del,em,img,strong,
+dl,dt,dd,ol,ul,li,
+fieldset,form,label,
+table,caption,tbody,tfoot,thead,tr,th,td{
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	font-style: normal;
+	font-weight: 400;
+}
+html.ie{
+	body,div,span,object,iframe,
+	h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+	a,abbr,acronym,address,code,del,em,img,strong,
+	dl,dt,dd,ol,ul,li,
+	fieldset,form,label,
+	table,caption,tbody,tfoot,thead,tr,th,td{
+		font-weight: 500;
+	}
+}
+
+article,aside,figure,footer,header,hgroup,menu,nav,section{
+	margin: 0;
+	padding: 0;
+	border: none;
+	display: block;
+	outline: none;
+}
+h1,h2,h3,h4,h5,h6,dt {
+	line-height: 1.7;
+}
+p {
+	line-height: 2;
+}
+dd,li,th,td,input,textarea {
+	line-height: 2;
+	text-align: left;
+}
+ul,ol {
+	list-style-type: none;
+}
+img, svg {
+	width: auto;
+	max-width: 100%;
+}
+strong {
+
+}
+em {
+
+}
+a,input,button,textarea{
+	outline : none;
+	border: none;
+	background-color: transparent;
+}
+a{
+	color: $font-color;
+	text-decoration: none;
+}
+a:visited {
+
+}
+a:active {
+
+}
+
+::-moz-selection {
+	background-color: rgba(194,155,1,0.3);
+}
+//::selection {
+//	background-color: rgba(194,155,1,0.3);
+//}
+img,svg,svg *{
+	&::selection{
+		background-color: transparent;
+	}
+}
+
+
+html{
+	@media #{$pc-all} {
+		.sp{
+			display: none !important;
+		}
+	}
+	@media #{$tablet} {
+		.tb{
+			display: none !important;
+		}
+	}
+	@media #{$smp} {
+		.pc{
+			display: none !important;
+		}
+	}
+	&.no-pc{
+		.ua-pc{
+			display: none;
+		}
+	}
+	&.pc,&.tablet{
+		.ua-sp{
+			display: none;
+		}
+	}
+}

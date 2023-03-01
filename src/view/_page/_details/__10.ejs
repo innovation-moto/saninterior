@@ -1,0 +1,71 @@
+<div id="p-details">
+  <!-- <%- include('../../_components/_lowlayerTitle.ejs', {
+    data: {
+      textEn: 'PHILOSOPHY',
+      textJp: '経営理念'
+    }
+  } ) %> -->
+  <script>
+    $(window).on("load", function () {
+      $('.bwWrapper').BlackAndWhite({
+        hoverEffect: true,
+      });
+      var h = $(window).height();
+      img = $(".imgH").height();
+      if (h < img) {
+        $(".bottom").addClass("active");
+        $(".bottom").css("top", h - 50 + "px");
+        $(".bottom-area img").css("top", h - 40 + "px");
+      } else {
+        $(".bottom").removeClass("active");
+        $(".bottom-area img").css("opacity", "0");
+      }
+    });
+    $(window).scroll(function () {
+      var scrollTop = $(this).scrollTop();
+      h = $(window).height();
+      console.log(h);
+      //$(".bottom").text(scrollTop);
+      if (scrollTop === 0) {
+        $(".bottom").fadeIn('slow');
+        $(this).css("opacity", "1");
+        $(".bottom-area img").fadeIn('slow');
+        $(this).css("opacity", "1");
+      } else {
+        $(".bottom").fadeOut('slow');
+        $(this).css("opacity", "0");
+        $(".bottom-area img").fadeOut('slow');
+        $(this).css("opacity", "0");
+      }
+    });
+    // $(window).resize(function() {
+    //   //画面リサイズ時の高さ取得
+    //   var h = $(window).height();
+    //   console.log(h);
+    //   $(".bottom").css("top",h - 50 + "px");
+    // });
+  </script>
+  
+  <div id="detail">
+    <div id="content" class="animsition">
+      <img src="<%- data.layer %>assets/img/top/detail25.png" alt="" class="imgH">
+      <div class="fixed-area">
+        <span class="text">EGU-SPLOSION / Jacket design</span>
+        <a class="animsition-link css-cancel" href="<%- data.layer %>" data-animsition-out-class="zoom-out-sm"></a>
+        
+      </div>
+      <!-- <div class="bottom-area">
+        <span class="bottom"></span>
+        <img src="img/scroll.svg" alt="">
+      </div> -->
+    </div>
+  </div>
+  
+  
+</div>
+
+<!-- <%- include('../../_components/_contact.ejs', {
+  data: {
+    layer: data.layer,
+  }
+} ) %> -->

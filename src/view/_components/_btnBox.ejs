@@ -1,0 +1,17 @@
+<% if(data.link === "true"){ %>
+<a class="c-btn-box <%- data.addClass %>" href="<%- data.url %>"<% if(data.target!==""){ %> target="<%- data.target %>"<% } %>>
+    <span class="text"><%- data.text %></span>
+    <span class="border"></span>
+    <span class="arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.14 6.85"><path d="M0,6.35H28.93l-6-6"/></svg>
+    </span>
+</a>
+<% } else if(data.link === "false") { %>
+<span class="c-btn-box <%- data.addClass %>">
+    <span class="text"><%- data.text %></span>
+    <span class="border"></span>
+    <span class="arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.14 6.85"><path d="M0,6.35H28.93l-6-6"/></svg>
+    </span>
+</span>
+<% } %>

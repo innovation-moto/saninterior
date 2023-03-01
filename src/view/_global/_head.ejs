@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+    <meta charset="UTF-8">
+    <%
+        const _title = (data.title)?data.title:"honnow | official webサイト";
+        const _discription = (data.discription)?data.discription:"";
+        const _keyword = (data.keyword)?data.keyword:"";
+
+        const _path_replaced = data.path.replace(/^_/g, '').replace(/\/_/g, '').replace(/index$/g, ''); //data.pathから行頭のアンダーバー、スラッシュ後のアンダーバー、および末尾のindexを削除
+
+        const _path = ""+_path_replaced;
+    %>
+
+    <title><%- _title; %></title>
+    <meta itemprop="description" name="description" content="<%- _discription; %>">
+    <meta name="keywords" content="デザイン,クリエイティブ,ソリューション,テクノロジー,アート,東京,HOW,WOW,本能" />
+    <meta property="og:description" content="<%- _discription; %>">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<%- _path; %>">
+    <meta property="og:image" content="https://honnow-tokyo.com/tempura-yokai/assets/img/meta/ogp.png?ver=20211202">
+    <meta property="og:site_name" content="<%- _title; %>">
+    <meta property="og:title" content="<%- _title; %>">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<%- _title; %>">
+    <meta name="twitter:description" content="<%- _discription; %>">
+    <meta name="twitter:image" content="https://honnow-tokyo.com/tempura-yokai/assets/img/meta/ogp.png?ver=20211202">
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<%- data.layer %>assets/img/meta/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="" />
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta name="msapplication-TileImage" content="https://honnow-tokyo.com/tempura-yokai/assets/img/meta/ogp.png?ver=20211202" />
+    <!-- <link href="https://fonts.googleapis.com/css?family=Heebo:400,700&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/yul0gfu.css">
+    <script src="<%- data.layer %>assets/js/head.js?1"></script>
+    <link rel="stylesheet" href="<%- data.layer %>assets/css/style.css?4">
+    <link rel="stylesheet" href="<%- data.layer %>assets/css/animsition.css?5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100&display=swap" rel="stylesheet">
+
+    <!-- <script src="https://ajaxzip3.github.io/ajaxzip3.js"></script> -->
+
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="canonical" href="<%- _path; %>">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <script>
+        (function(d) {
+        var config = {
+            kitId: 'orl6kvt',
+            scriptTimeout: 3000,
+            async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+    </script>
+    <script>
+        let viewportContent;
+        if (Useragnt.mobile) {
+            viewportContent = "width=device-width, initial-scale=1, viewport-fit=cover";
+        } else if (Useragnt.tablet) {
+            viewportContent = "width=1280";
+        } else {
+            viewportContent = "width=1280";
+        }
+        document.querySelector("meta[name='viewport']").setAttribute("content", viewportContent);
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Prompt:300,400,500,600&display=swap" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51743041-9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-51743041-9');
+    </script>
+
+</head>

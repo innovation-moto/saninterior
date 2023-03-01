@@ -1,0 +1,37 @@
+@charset "euc-jp";
+
+/* フォームメール2 CSS */
+
+div#sfm-container { width: 600px; margin: auto; padding: 5px; border: 1px solid #ccc; }
+div#sfm-container h1 { font-size: 14px; color: #fff; background: #99c; padding: 2px 2px 1px 5px; border-left: 6px solid #55a; margin: 0px; }
+div#sfm-container h2 { font-size: 12px; margin: 0px; padding: 10px 0px; }
+
+div#sfm-layout { text-align: center; margin: 10px 0px 15px; }
+div#sfm-layout p { font-weight: normal; margin: 0px; padding-bottom: 5px; }
+div#sfm-layout h3 { font-size: 12px; text-align: center; margin: 5px 0px; }
+div#sfm-layout table { width: 90%; margin: auto; border: 1px solid #ccc; }
+div#sfm-layout a:link, div#sfm-layout a:visited { color: #00d; text-decoration: none; }
+div#sfm-layout a:hover { color: #f22; text-decoration: underline; }
+div#sfm-layout form { margin: 0px; }
+div#sfm-layout input, div#sfm-layout select, div#sfm-layout textarea { font-size: 12px; }
+div#sfm-layout td, div#sfm-layout th { font-size: 12px; line-height: 140%; text-align: left; }
+div#sfm-layout td { background: #f1f1f1; width: 354px; padding: 5px; }
+div#sfm-layout th { font-weight: normal; background-color: #e4e4e4; white-space: nowrap; padding: 5px; border-left: 1px solid #bbb; }
+div#sfm-layout .submit { text-align: center; background: #fff; width: auto; border-left: none; }
+div#sfm-layout .submit input { width: 70px; }
+div#sfm-layout .type-red { color: red; }
+div#sfm-layout .border-red { border-left-color: red; }
+div#sfm-layout .ERR { color: red; }
+
+/* フォーム整形 */
+#name, #kana, #address2, #address3, #email, #emailcheck, #subject { width: 350px; }
+#address0 { margin-bottom: 3px; }
+#zip0 { width: 30px; }
+#zip1 { width: 40px; }
+#tel0, #tel1, #tel2, #fax0, #fax1, #fax2 { width: 40px; }
+#message { width: 350px; height: 100px; }
+
+/* 著作権表記 */
+div#copyright { font-size: 10px; text-align: right; margin-top: 2px; }
+div#copyright a:link, div#copyright a:visited { color: #999; text-decoration: none; }
+div#copyright a:hover { text-decoration: underline; }

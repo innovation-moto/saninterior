@@ -1,0 +1,182 @@
+@charset "UTF-8";
+
+//#l-loader{
+//    width: 100%;height: 100%;
+//    position: fixed;
+//    top: 0;
+//    left: 0;
+//    z-index: 10000;
+//    >*{
+//        width: 100%; height: 100%;
+//        position: absolute;
+//        top: 0;
+//        left: 0;
+//    }
+//}
+@media #{$pc-all} {
+  #l-loader {
+    display: none;
+
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: map-get($zindex, loader);
+    &__inner {
+      width: 340px;
+      height: 250px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      .l-loader-numerator,
+      .l-loader-denominator {
+        @include font-en-light;
+        @include gradient-text;
+        position: absolute;
+        line-height: 1;
+      }
+      .l-loader-numerator {
+        font-size: 144px;
+        top: 0;
+        left: 0;
+      }
+      .l-loader-denominator {
+        font-size: 110px;
+        bottom: 0;
+        right: 0;
+        opacity: 0.3;
+      }
+      .l-loader-line-a,
+      .l-loader-line-b {
+        position: absolute;
+        width: 1px;
+        height: 235px;
+        transform: rotate(42deg);
+      }
+
+      .l-loader-line-a {
+        transform-origin: top right;
+        top: 27px;
+        right: 68px;
+        background-color: $key-color;
+        z-index: 1;
+      }
+      .l-loader-line-b {
+        transform-origin: bottom left;
+        left: 20%;
+        bottom: 0;
+        background-color: $font-color;
+      }
+    }
+  }
+}
+
+//.pace {
+//  width: 100%;
+//  height: 100%;
+//  -webkit-pointer-events: none;
+//  pointer-events: none;
+//  -webkit-user-select: none;
+//  -moz-user-select: none;
+//  user-select: none;
+//  position: fixed;
+//  //background-color: $key-color;
+//  z-index: 100000;
+//  //display: none;
+//  //transform-style: preserve-3d;
+//  //perspective: 600px;
+//  .pace-progress {
+//    width: 100%;
+//    @include absolute-center-y(4px);
+//    background-color: #fff;
+//    z-index: 1;
+//    &:after {
+//    }
+//  }
+//  .pace-activity {
+//    width: 100%;
+//    @include absolute-center-y(4px);
+//    background-color: $key-color;
+//    @include easing-out(0.8);
+//  }
+//  &.pace-inactive {
+//    .pace-progress {
+//      //display: none;
+//    }
+//  }
+//}
+//
+//.pace-done {
+//  .pace {
+//    .pace-activity {
+//      @include absolute-center(100px, 100px);
+//      border-radius: 50%;
+//    }
+//  }
+//}
+
+@media #{$smp} {
+  #l-loader {
+    display: none;
+
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: map-get($zindex, loader);
+    &__inner {
+      width: 340px;
+      height: 250px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      .l-loader-numerator,
+      .l-loader-denominator {
+        @include font-en-light;
+        @include gradient-text;
+        position: absolute;
+        line-height: 1;
+      }
+      .l-loader-numerator {
+        font-size: 144px;
+        top: 0;
+        left: 0;
+      }
+      .l-loader-denominator {
+        font-size: 110px;
+        bottom: 0;
+        right: 0;
+        opacity: 0.3;
+      }
+      .l-loader-line-a,
+      .l-loader-line-b {
+        position: absolute;
+        width: 1px;
+        height: 235px;
+        transform: rotate(42deg);
+      }
+
+      .l-loader-line-a {
+        transform-origin: top right;
+        top: 27px;
+        right: 68px;
+        background-color: $key-color;
+        z-index: 1;
+      }
+      .l-loader-line-b {
+        transform-origin: bottom left;
+        left: 20%;
+        bottom: 0;
+        background-color: $font-color;
+      }
+    }
+  }
+}

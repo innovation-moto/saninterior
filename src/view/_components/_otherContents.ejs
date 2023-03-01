@@ -1,0 +1,40 @@
+<h2 class="mini-title js__slide-right-chain-text">OTHER CONTENTS</h2>
+
+<div class="p-common-other__link">
+    <% if(data.craftmanship){ %>
+    <div class="p-common-other__link-item">
+        <div class="p-common-other__link-item__btn link-craftman js__slide-right-chain">
+            <a href="./craftmanship/">
+                <span class="p-common-other__link-item__btn__title">
+                    <span class="en <%- data.small ? 'small' : '' %>">CRAFTMANSHIP</span>
+                    <span class="jp">日本エアフィルターのものづくり</span>
+                </span>
+            </a>
+        </div>
+    </div>
+    <% } %>
+    <% if(data.randd){ %>
+    <div class="p-common-other__link-item">
+        <div class="p-common-other__link-item__btn link-randd js__slide-right-chain">
+            <a href="./randd/">
+                <span class="p-common-other__link-item__btn__title">
+                    <span class="en <%- data.small ? 'small' : '' %>">R&amp;D</span>
+                    <span class="jp">日本エアフィルターの研究開発</span>
+                </span>
+            </a>
+        </div>
+    </div>
+    <% } %>
+    <% if(data.solution){ %>
+    <div class="p-common-other__link-item">
+        <div class="p-common-other__link-item__btn link-solution js__slide-right-chain">
+            <a href="./solution/">
+                <span class="p-common-other__link-item__btn__title">
+                    <span class="en <%- data.small ? 'small' : '' %>">SOLUTION</span>
+                    <span class="jp">おいしい空気を作るということ</span>
+                </span>
+            </a>
+        </div>
+    </div>
+    <% } %>
+</div>

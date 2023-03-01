@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+/* [ easing ]
+-------------------------------------------------*/
+
+//@mixin easing($speed){
+//	transition: all $speed+s ease-in;
+//	-moz-transition: all $speed+s ease-in;
+//	-webkit-transition: all $speed+s ease-in;
+//	-ms-transition: all $speed+s ease-in;
+//}
+//@mixin easing-linear($speed){
+//	transition: all $speed+s linear;
+//	-moz-transition: all $speed+s linear;
+//	-webkit-transition: all $speed+s linear;
+//	-ms-transition: all $speed+s linear;
+//}
+//@mixin easing-original($speed){
+//	transition: all $speed+s cubic-bezier(0.075,.82,.565,1);
+//	-moz-transition: all $speed+s cubic-bezier(0.075,.82,.565,1);
+//	-webkit-transition: all $speed+s cubic-bezier(0.075,.82,.565,1);
+//	-ms-transition: all $speed+s cubic-bezier(0.075,.82,.565,1);
+//}
+@mixin easing($speed){
+	transition-property: all;
+	transition-duration: $speed+s;
+	transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+	// transition: all $speed+s cubic-bezier(0.23, 1, 0.32, 1);
+	// -moz-transition: all $speed+s cubic-bezier(0.23, 1, 0.32, 1);
+	// -webkit-transition: all $speed+s cubic-bezier(0.23, 1, 0.32, 1);
+	// -ms-transition: all $speed+s cubic-bezier(0.23, 1, 0.32, 1);
+}
+$easing : cubic-bezier(0.77, 0, 0.175, 1);
+
+//@mixin easing-smooth($speed){
+//	transition-property: all;
+//	transition-duration: $speed+s;
+//	transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+//}

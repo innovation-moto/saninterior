@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+@import "../mixin";
+
+#l-lowlayer-body{
+
+}
+
+
+/* ----------------------------------
+
+  --  PC
+
+ ---------------------------------- */
+
+@media #{$pc-all} {
+	#l-lowlayer-body {
+		&__inner {
+		}
+	}
+}
+
+@media #{$pc-middle} {
+	#l-lowlayer-body {
+	}
+}
+
+@media #{$pc-small} {
+	#l-lowlayer-body {
+	}
+}
+
+/* ----------------------------------
+
+  --  SMP
+
+ ---------------------------------- */
+
+@media #{$smp} {
+	#l-lowlayer-body {
+		&__inner {
+		}
+	}
+}

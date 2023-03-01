@@ -1,0 +1,316 @@
+@charset "utf-8";
+
+@import "../../mixin";
+
+/* ----------------------------------
+
+ --  mission
+
+---------------------------------- */
+
+#p-mission {}
+
+/* ----------------------------------
+
+  --  PC
+
+ ---------------------------------- */
+
+@media #{$pc-all} {
+  #clients{
+    nav{
+      ul{
+        li{
+          a{
+            &.clients{
+              color: #1e1e1e
+            }
+          }
+        }
+      }
+    }
+  }
+  .l-clients{
+    h2{
+      @include font-en-bold;
+      font-size: 40px;
+      text-align: center;
+      margin: 85px 0 75px;
+      letter-spacing: 0px;
+      .header-text{
+        @include font-en-bold;
+        font-size: 40px;
+        opacity: 0;
+        display: inline-block;
+        margin: 0 -3px;
+        // transform: translate(0, 50px);
+        // &:nth-child(2){
+        //   transition-delay: 0.2s;
+        // }
+        // &:nth-child(3){
+        //   transition-delay: 0.3s;
+        // }
+        // &:nth-child(4){
+        //   transition-delay: 0.4s;
+        // }
+        // &:nth-child(5){
+        //   transition-delay: 0.5s;
+        // }
+        // &:nth-child(6){
+        //   transition-delay: 0.6s;
+        // }
+        // &:nth-child(7){
+        //   transition-delay: 0.7s;
+        // }
+      }
+    }
+    &__wrapper{
+      // opacity: 0;
+    }
+    &__logo{
+      width: 1035px;
+      margin:105px  auto 113px;
+      overflow: hidden;
+      // opacity: 0;
+      ul{
+        display: flex;              /* フレックスボックスにする */
+        justify-content:center;
+        flex-wrap: wrap;
+        align-items:center;
+        li{
+          // float: left;
+          // width: 20%;
+          margin-bottom: 74px;
+          opacity: 0;
+        }
+      }
+      .disney{
+        margin-right: 106px;
+        img{
+          width: 140px;
+        }
+      }
+      .pokemon{
+        margin-right: 120px;
+        img{
+          width: 163px;
+        }
+      }
+      .tsuburaya{
+        margin-right: 125px;
+        img{
+          width: 100px;
+        }
+      }
+      .mcdonald{
+        margin-right: 109px;
+        img{
+          width: 85px;
+        }
+      }
+      .jcb{
+        img{
+          width: 87px;
+        }
+      }
+      .honda{
+        margin-right: 88px;
+        img{
+          width: 162px;
+        }
+      }
+      .onodera{
+        margin-right: 88px;
+        img{
+          width: 168px;
+        }
+      }
+      .wego{
+        margin-right: 90px;
+        img{
+          width: 155px;
+        }
+      }
+      .usen{
+        margin-right: 98px;
+        img{
+          width: 106px;
+        }
+      }
+      .qualia{
+        img{
+          width: 80px;
+        }
+      }
+    }
+  }
+  .c-clients{
+    &__button{
+      width: 200px;
+      height: 60px;
+      margin: auto;
+      background: #636463;
+      text-align: center;
+      border-radius: 5px;
+      a{
+        color: #fff;
+        @include font-en-bold;
+        font-size: 18px;
+        line-height: 58px;
+      }
+      input{
+        color: #fff;
+        @include font-en-bold;
+        font-size: 16px;
+        line-height: 58px;
+      }
+    }
+  }
+}
+
+
+
+/* ----------------------------------
+
+  --  SMP
+
+ ---------------------------------- */
+
+@media #{$smp} {
+  .l-clients{
+    h2{
+      text-align: center;
+      padding: 34px 0 44px;
+      letter-spacing: 0px;
+      .header-text{
+        @include font-en-bold;
+        font-size: 32px;
+        opacity: 0;
+        display: inline-block;
+        margin: 0 -3px;
+        // transform: translate(0, 50px);
+        // &:nth-child(2){
+        //   transition-delay: 0.2s;
+        // }
+        // &:nth-child(3){
+        //   transition-delay: 0.3s;
+        // }
+        // &:nth-child(4){
+        //   transition-delay: 0.4s;
+        // }
+        // &:nth-child(5){
+        //   transition-delay: 0.5s;
+        // }
+        // &:nth-child(6){
+        //   transition-delay: 0.6s;
+        // }
+        // &:nth-child(7){
+        //   transition-delay: 0.7s;
+        // }
+      }
+    }
+    &__wrapper{
+      background: #f0f0f0;
+    }
+    &__logo{
+      width: 100%;
+      margin:0px  auto;
+      overflow: hidden;
+      ul{
+        display: flex;              /* フレックスボックスにする */
+        justify-content:center;
+        flex-wrap: wrap;
+        align-items:center;
+        li{
+          // float: left;
+          text-align: center;
+          width: 50%;
+          margin-bottom: 42px;
+          opacity: 0;
+        }
+      }
+      .disney{
+        // margin-right: 109px;
+        img{
+          width: 112px;
+        }
+      }
+      .pokemon{
+        // margin-right: 125px;
+        img{
+          width: 123px;
+        }
+      }
+      .tsuburaya{
+        // margin-right: 125px;
+        img{
+          width: 71px;
+        }
+      }
+      .mcdonald{
+        // margin-right: 114px;
+        img{
+          width: 57px;
+        }
+      }
+      .jcb{
+        img{
+          width: 70px;
+        }
+      }
+      .honda{
+        // margin-right: 97px;
+        img{
+          width: 132px;
+        }
+      }
+      .onodera{
+        // margin-right: 109px;
+        img{
+          width: 132px;
+        }
+      }
+      .wego{
+        // margin-right: 109px;
+        img{
+          width: 113px;
+        }
+      }
+      .usen{
+        // margin-right: 107px;
+        margin-bottom: 0;
+        img{
+          width: 93px;
+        }
+      }
+      .qualia{
+        margin-bottom: 0;
+        img{
+          width: 57px;
+        }
+      }
+    }
+  }
+  .c-clients{
+    &__button{
+      width: 200px;
+      height: 60px;
+      margin: auto;
+      background: #636463;
+      text-align: center;
+      border-radius: 5px;
+      a{
+        color: #fff;
+        @include font-en-bold;
+        font-size: 18px;
+        line-height: 58px;
+      }
+      input{
+        color: #fff;
+        @include font-en-bold;
+        font-size: 16px;
+        line-height: 58px;
+      }
+    }
+  }
+}

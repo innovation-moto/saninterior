@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+@import "../../mixin";
+
+/* ----------------------------------
+
+ --  table
+
+---------------------------------- */
+
+.c-table {
+  width: 100%;
+  th{
+    background-color: rgba(227, 227, 227, 0.75);
+    vertical-align: middle;
+  }
+  &__font-bold{
+    font-weight: bold;
+  }
+  &__w200{
+    width: 200px;
+  }
+  &__w280{
+    width: 280px;
+  }
+  &__w450{
+    width: 450px;
+  }
+}
+
+/* ----------------------------------
+
+  --  PC
+
+ ---------------------------------- */
+
+@media #{$pc-all} {
+  .c-table{
+    tr {
+      border-bottom: 1px solid #c4cacc;
+    }
+    th {
+      line-height: 28px;
+    }
+  }
+}
+
+@media #{$pc-middle} {
+}
+
+/* ----------------------------------
+
+  --  SMP
+
+ ---------------------------------- */
+
+@media #{$smp} {
+  .c-table{
+    th,td {
+      width: 100%;
+      display: block;
+    }
+  }
+}

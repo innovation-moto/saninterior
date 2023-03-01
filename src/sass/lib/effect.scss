@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+
+.js__tsc{
+    perspective: 10px;
+    //transform-style: preserve-3d;
+    .js__tsc-show{
+        position: relative;
+        transform-style: preserve-3d;
+    }
+}
+
+.svg-path-morph{
+    &-change{
+        visibility:hidden;
+    }
+}
+
+.ease__scale{
+    animation: scaleLoop 4.4s ease-out infinite;
+    transform-origin: 50% 50%;
+}
+
+.js__slide-right-chain,
+.js__slide-right-chain-text,
+.js__tsc-title .js__clone{
+    opacity: 0;
+}

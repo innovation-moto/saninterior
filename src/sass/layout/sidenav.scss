@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+@import "../mixin";
+
+/* ----------------------------------
+
+ --  sidenav
+
+---------------------------------- */
+
+//#l-sidenav {}
+
+/* ----------------------------------
+
+  --  PC
+
+ ---------------------------------- */
+
+@media #{$pc-all} {
+  #l-sidenav {
+    position: fixed;
+    top: 0;
+    left: 30px;
+    height: 100vh;
+    width: 32px;
+    z-index: map-get($zindex, sidenav);
+    > ul {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: rotate(90deg) translateX(-50%);
+      display: flex;
+      transform-origin: bottom left;
+      > li {
+        position: relative;
+        padding: 0;
+        height: 32px;
+        // &:not(:first-child) {
+        //   &::before {
+        //     content: '';
+        //     display: block;
+        //     position: absolute;
+        //     width: 1px;
+        //     height: 13px;
+        //     background-color: $font-color;
+        //     top: 50%;
+        //     transform: translateY(-50%);
+        //     left: 0;
+        //   }
+        // }
+
+
+        > a,
+        > span{
+          @include font-en;
+          font-size: 14px;
+          color: $key-color;
+          white-space: nowrap;
+          padding: 0;
+          display: block;
+          overflow: hidden;
+          letter-spacing: 0.4em;
+          width: 33px;
+          opacity: .5;
+          transition: opacity .4s,width .4s;
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 13px;
+            height: 1px;
+            background-color:#000;
+            margin: 0 10px 4px;
+            transition: transform .4s,background-color .4s,-webkit-transform .4s;
+            transform: rotate(90deg);
+          }
+        }
+
+        &.active{
+          > a,
+          > span {
+            width: auto;
+            opacity: 1;
+            &::before{
+              transform: rotate(0);
+              background-color: $key-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+///* ----------------------------------
+//
+//  --  SMP
+//
+// ---------------------------------- */
+//@media #{$smp} {}

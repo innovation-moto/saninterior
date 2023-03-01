@@ -1,0 +1,574 @@
+@charset "utf-8";
+
+@import "../../../mixin";
+
+/* ----------------------------------
+
+ --  背景のwave表現
+
+---------------------------------- */
+
+@-webkit-keyframes bgloop-common {
+  from {
+    background-position: 0 -745px;
+  }
+
+  to {
+    background-position: 2036px -745px;
+  }
+}
+
+@keyframes bgloop-common {
+  from {
+    background-position: 0 -745px;
+  }
+
+  to {
+    background-position: 2036px -745px;
+  }
+}
+
+@-webkit-keyframes bgloop-common-sp {
+  from {
+    background-position: 0 -745px;
+  }
+
+  to {
+    background-position: 716px -745px;
+  }
+}
+
+@keyframes bgloop-common-sp {
+  from {
+    background-position: 0 450px;
+  }
+
+  to {
+    background-position: 716px 450px;
+  }
+}
+
+@media #{$pc-all} {
+  .l-content {
+    background: url(../img/common/bg-wave.png) repeat center -745px;
+    -webkit-animation: bgloop-common 30s linear infinite;
+    animation: bgloop-common 30s linear infinite;
+  }
+  .is-inertia-none{
+    .l-content{
+      animation: none !important;
+    }
+  }
+
+}
+
+@media #{$smp} {
+  .l-content {
+    background: url(../img/common/bg-wave_sp.png) repeat center;
+    -webkit-animation: bgloop-common-sp 30s linear infinite;
+    animation: bgloop-common-sp 30s linear infinite;
+    background-size: 716px auto;
+  }
+}
+
+/* ----------------------------------
+
+ --  section title
+
+---------------------------------- */
+@media #{$pc-all} {
+  .l-section{
+    &__title{
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding-bottom: 8px;
+      margin-bottom: 60px;
+      .en{
+        @include font-en-serif;
+        font-size: 60px;
+        color: $key-color;
+        .js__clone > div > div{
+          font-style: italic;
+        }
+      }
+      .jp{
+        margin-left: 30px;
+        font-size: 12px;
+        color: $key-color;
+        font-weight: bold;
+        div{
+          font-weight: bold;
+        }
+      }
+      .glitter{
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 37px;
+        height: 8px;
+        background: url(../img/common/c-h2_line.svg) no-repeat center;
+        background-size:  37px 8px;
+      }
+    }
+  }
+}
+
+@media #{$smp} {
+  .l-section{
+    &__title{
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      margin-bottom: 60px;
+      .en{
+        @include font-en-serif;
+        font-size: 40px;
+        letter-spacing: 0;
+        white-space: nowrap;
+        color: $key-color;
+        .js__clone > div > div{
+          font-style: italic;
+        }
+      }
+      .jp{
+        margin-top: -5px;
+        font-size: 11px;
+        color: $key-color;
+        font-weight: bold;
+      }
+      .glitter{
+        margin-top: 10px;
+        content: '';
+        display: block;
+        width: 28.5px;
+        height: 6px;
+        background: url(../img/common/c-h2_line.svg) no-repeat center;
+        background-size:  28.5px 6px;
+      }
+    }
+  }
+}
+
+
+
+
+/* ----------------------------------
+
+ --  .c-body-gradient
+
+---------------------------------- */
+// 背景グラデーション
+.c-body-gradient {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+
+  &.type-a {
+    background-image: $body-gradient_a;
+  }
+
+  &.type-b {
+    background-image: $body-gradient_b;
+  }
+
+  &.type-c {
+    background-image: $body-gradient_c;
+  }
+}
+
+/* ----------------------------------
+
+ --  .c-body-square
+
+---------------------------------- */
+// 四角オブジェクト
+.c-body-square {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+
+  .c-body-square-object {
+    position: absolute;
+
+    &.type-a {
+      background-color: rgba(255, 255, 255, 0.35);
+    }
+
+    &.type-b {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    &.type-c {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
+/* ----------------------------------
+
+ --  lowlayer body
+
+---------------------------------- */
+
+#l-lowlayer-body {
+  &__inner {}
+}
+
+/* ----------------------------------
+
+  --  PC
+
+ ---------------------------------- */
+
+@media #{$pc-all} {
+  #l-lowlayer-body {
+    &__inner {
+      @include pc-width;
+      padding-top: 150px;
+      padding-bottom: 150px;
+    }
+  }
+}
+
+/* ----------------------------------
+
+  --  SMP
+
+ ---------------------------------- */
+
+@media #{$smp} {
+  #l-lowlayer-body {
+    &__inner {
+      @include sp-width;
+      padding-top: 103px;
+      padding-bottom: 60px;
+    }
+  }
+}
+
+
+
+
+/* ----------------------------------
+
+  --  下部OTHER CONTENTS
+
+ ---------------------------------- */
+/* ----------------------------------
+
+  --  PC
+
+ ---------------------------------- */
+
+@media #{$pc-all} {
+  .p-common-other {
+    padding-bottom: 200px;
+
+    .p-common-section__inner {
+      margin: 0 auto;
+      width: 1080px;
+      position: relative;
+      z-index: 40;
+
+      .mini-title {
+        display: flex;
+        align-items: center;
+        color: $key-color;
+        @include font-en-bold;
+        font-weight: bold;
+        font-size: 13px;
+        margin-bottom: 25px;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          height: 2px;
+          width: 20px;
+          background: $key-color;
+          margin-right: 10px;
+        }
+      }
+
+    }
+
+    &__link {
+      display: flex;
+      justify-content: space-between;
+
+      &-item {
+        flex: 1;
+        margin-right: 100px;
+        &.small{
+          margin-right: 45px;
+        }
+        &:last-child{
+          margin-right: 0;
+        }
+
+        &__btn {
+          position: relative;
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+
+          &.link-craftman {
+            background-image: url(../img/common/b-craftman_photo.jpg);
+          }
+
+          &.link-randd {
+            background-image: url(../img/common/b-randd_photo.jpg);
+          }
+
+          &.link-solution {
+            background-image: url(../img/common/b-solution_photo.jpg);
+          }
+
+          a {
+            display: block;
+            background: rgba(6, 45, 159, .55);
+            transition: all .3s;
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+              background: rgba(6, 45, 159, .90) url(../img/top/b-link_overlay.png) no-repeat center;
+            }
+          }
+
+          &__title {
+            color: #fff;
+            text-align: center;
+
+            .en {
+              display: block;
+              @include font-en-serif;
+              font-size: 40px;
+              font-style: italic;
+              &.small{
+                font-size: 30px;
+              }
+            }
+
+            .jp {
+              display: block;
+              font-size: 12px;
+              font-weight: 700;
+            }
+          }
+
+          &__more {
+            position: absolute;
+            right: 20px;
+            bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            span.text {
+              display: block;
+              color: #fff;
+              font-size: 12px;
+              @include font-en;
+            }
+
+            span.arrow {
+              display: block;
+              margin-left: 15px;
+              margin-top: -1px;
+              width: 33px;
+              height: 7px;
+
+              svg {
+
+                rect,
+                path {
+                  fill: #fff;
+                }
+              }
+            }
+          }
+        }
+
+        &__text {
+          margin-top: 30px;
+          font-size: 15px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+
+}
+
+/* ----------------------------------
+
+  --  SMP
+
+ ---------------------------------- */
+
+@media #{$smp} {
+  .p-common-other {
+    padding-bottom: 120px;
+
+    .p-common-section__inner {
+      margin: 0 25px;
+      position: relative;
+      z-index: 40;
+
+      .mini-title {
+        display: flex;
+        align-items: center;
+        color: $key-color;
+        @include font-en-bold;
+        font-weight: bold;
+        font-size: 13px;
+        margin-bottom: 35px;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          height: 2px;
+          width: 20px;
+          background: $key-color;
+          margin-right: 10px;
+        }
+      }
+
+    }
+
+    &__link {
+      &-item {
+        width: 100%;
+        margin-bottom: 30px;
+
+        &__btn {
+          position: relative;
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+
+          &.link-craftman {
+            background-image: url(../img/common/b-craftman_photo.jpg);
+          }
+
+          &.link-randd {
+            background-image: url(../img/common/b-randd_photo.jpg);
+          }
+
+          &.link-solution {
+            background-image: url(../img/common/b-solution_photo.jpg);
+          }
+
+          a {
+            display: block;
+            background: rgba(6, 45, 159, .55);
+            transition: all .3s;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:active {
+              background: rgba(6, 45, 159, .90) url(../img/top/b-link_overlay.png) no-repeat center;
+            }
+          }
+
+          &__title {
+            color: #fff;
+            text-align: center;
+
+            .en {
+              display: block;
+              @include font-en-serif;
+              font-size: 30px;
+              font-style: italic;
+            }
+
+            .jp {
+              font-weight: 700;
+              display: block;
+              font-size: 11px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+}
+
+
+/* ----------------------------------
+
+  --  汎用 mini title
+
+ ---------------------------------- */
+/* ----------------------------------
+
+  --  PC
+
+ ---------------------------------- */
+
+ @media #{$pc-all} {
+  .mini-title {
+    display: flex;
+    align-items: center;
+    color: $key-color;
+    @include font-en-bold;
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 25px;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 2px;
+      width: 20px;
+      background: $key-color;
+      margin-right: 10px;
+    }
+  }
+
+
+}
+
+/* ----------------------------------
+
+  --  SMP
+
+ ---------------------------------- */
+
+@media #{$smp} {
+  .mini-title {
+    display: flex;
+    align-items: center;
+    color: $key-color;
+    @include font-en-bold;
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 35px;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 2px;
+      width: 20px;
+      background: $key-color;
+      margin-right: 10px;
+    }
+  }
+
+
+}

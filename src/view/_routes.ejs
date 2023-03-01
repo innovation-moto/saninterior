@@ -1,0 +1,116 @@
+
+<%- include('./_global/_head', {
+data : {
+id            : page.id,
+layer            : page.layer,
+scroll           : page.scrollType,
+title            : page.title,
+discription      : page.discription,
+keyword          : page.keyword,
+path             : page.path
+}
+}) %>
+
+<% $domain = "/" %>
+<body id="<%- page.id %>" class="<% if(page.id!=='top'){ %>lowlayer<%}%>">
+<div id="wrapper">
+<div id="l-root">
+    <% if(page.id!=='top' ){ %>
+        <%- include('./_global/_header2', { 
+            data : { 
+                id : page.id, 
+                layer : page.layer, 
+                siteurl : page.layer, 
+                domain : $domain 
+            }
+            }) %>
+    <%}%>
+    <% if(page.id=='top' ){ %>
+        <%- include('./_global/_header', { 
+            data : { 
+                id : page.id, 
+                layer : page.layer, 
+                siteurl : page.layer, 
+                domain :$domain 
+            } 
+        }) %>
+    <%}%>
+
+    <div id="l-scroll">
+    <div id="l-scroll-body">
+
+    <main id="main">
+        <div id="l-load">
+        <div class="l-load-contents" data-namespace="<%- page.id %>">
+
+        <% var path = '_page/'+page.path %>
+
+        <%- include(path, {
+        data : {
+        id            : page.id,
+        layer            : page.layer,
+        siteurl              : page.layer,
+        domain : $domain
+        }
+        }) %>
+        </div>
+        </div>
+
+
+        <%- include('./_global/_footer', {
+        data : {
+        id            : page.id,
+        layer            : page.layer,
+        siteurl              : page.layer,
+        domain : $domain
+        }
+        }) %>
+
+
+    </main><!-- /#l-body -->
+
+    <!-- <div class="l-bg">
+        <div class="line-wrap">
+        </div>
+        <div class="line2-wrap">
+        </div>
+        <div class="circle-wrap">
+        </div>
+    </div> -->
+          
+
+    </div></div>
+
+    <!-- <div id="l-pagetop"><a href="#">PAGE TOP</a></div> -->
+
+    <% /* include('./_components/_modal', {
+    data: {
+    id            : page.id,
+    layer            : page.layer,
+    siteurl              : page.layer,
+    domain : $domain
+    }
+    }) */ %>
+
+    <% if(page.id === 'mission'){ %>
+        <div id="p-mission-section__image">
+            <div class="obj01"></div>
+            <div class="obj02"></div>
+            <div class="obj03"></div>
+        </div>
+    <% } %>
+
+
+</div><!-- /#root -->
+</div><!-- /#wrapper -->
+
+<%- include('./_global/_scripts', {
+data : {
+id            : page.id,
+layer            : page.layer,
+siteurl              : page.layer
+}
+}) %>
+
+</body>
+</html>

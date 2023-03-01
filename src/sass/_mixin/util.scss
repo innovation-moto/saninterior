@@ -1,0 +1,277 @@
+@charset "utf-8";
+
+
+/* [ Wrapper ]
+-------------------------------------------------*/
+
+@mixin wrapInner() {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: block;
+}
+
+
+
+/* [ float clear ]
+-------------------------------------------------*/
+@mixin clearfix() {
+	&:after{
+		height: 1px;
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+/* [ opacity ]
+-------------------------------------------------*/
+@mixin opacity($num){
+	-ms-filter: "alpha(opacity=$num)"; /* IE8 */
+	opacity: $num/100;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$num)";
+	//display: inline-block\9;
+}
+
+/* [ blur ]
+-------------------------------------------------*/
+
+@mixin blur($num){
+	-webkit-filter: blur($num + px);
+	filter: blur($num + px);
+}
+
+/* [ radius ]
+-------------------------------------------------*/
+
+@mixin radius($num){
+	-webkit-border-radius:$num;
+	-moz-border-radius:$num;
+	border-radius:$num;
+}
+
+/* [ Position ]
+-------------------------------------------------*/
+
+@mixin absolute($w,$h){
+	width: $w;
+	height: $h;
+	position: absolute;
+	left:0;
+	top:0;
+}
+
+
+@mixin absolute-center($w,$h){
+	width: $w;
+	height: $h;
+	position: absolute;
+	left:0;
+	right:0;
+	bottom:0;
+	top:0;
+	margin:auto;
+}
+
+@mixin absolute-center-y($h){
+	height: $h;
+	position: absolute;
+	bottom:0;
+	top:0;
+	margin-top:auto;
+	margin-bottom:auto;
+}
+
+@mixin absolute-center-x($w){
+	width: $w;
+	position: absolute;
+	left:0;
+	right:0;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+@mixin flex-list{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+@mixin flex-center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/* [ transform ]
+-------------------------------------------------*/
+
+@mixin rotate($num){
+	-ms-transform: rotate($num+deg);
+	-moz-transform: rotate($num+deg);
+	-webkit-transform: rotate($num+deg);
+	transform: rotate($num+deg);
+}
+
+@mixin rotateY($num){
+	-ms-transform: rotateY($num+deg);
+	-moz-transform: rotateY($num+deg);
+	-webkit-transform: rotateY($num+deg);
+	transform: rotateY($num+deg);
+}
+@mixin rotateX($num){
+	-ms-transform: rotateX($num+deg);
+	-moz-transform: rotateX($num+deg);
+	-webkit-transform: rotateX($num+deg);
+	transform: rotateX($num+deg);
+}
+
+@mixin scale($num){
+	-moz-transform:scale($num);
+	-webkit-transform:scale($num);
+	-ms-transform:scale($num);
+	transform:scale($num);
+}
+
+@mixin delay($num){
+	-moz-transition-delay:$num+s !important;
+	-webkit-transition-delay:$num+s !important;
+	-o-transition-delay:$num+s !important;
+	-ms-transition-delay:$num+s !important;
+	transition-delay:$num+s !important;
+}
+
+@mixin translateX($num){
+	-webkit-transform: translateX($num);
+	-moz-transform: translateX($num);
+	-ms-transform: translateX($num);
+	-o-transform: translateX($num);
+	transform: translateX($num);
+}
+
+@mixin translateY($num){
+	-webkit-transform: translateY($num);
+	-moz-transform: translateY($num);
+	-ms-transform: translateY($num);
+	-o-transform: translateY($num);
+	transform: translateY($num);
+}
+
+@mixin translate($x,$y){
+	-webkit-transform: translate($x,$y);
+	-moz-transform: translate($x,$y);
+	-ms-transform: translate($x,$y);
+	-o-transform: translate($x,$y);
+	transform: translate($x,$y);
+}
+
+
+/* [ Background ]
+-------------------------------------------------*/
+
+@mixin bg($url) {
+	background-image: url($url);
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+
+@mixin bg-cover($url) {
+	background-image: url($url);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+@mixin bg-contain($url) {
+	background-image: url($url);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+/* [ Math ]
+-------------------------------------------------*/
+
+@function raito($base,$this) {
+	@return $this/$base*100 + '%';
+}
+
+
+/* [ Animation ]
+-------------------------------------------------*/
+
+@keyframes scaleLoop {
+	0%{
+		transform: scale(1);
+		//opacity: 1;
+	}
+	50%{
+		transform: scale(0.9);
+		//opacity: 0.5;
+	}
+	100%{
+		transform: scale(1);
+		//opacity: 1;
+	}
+}
+
+
+@function pow($bs, $exp) {
+	$val: $bs;
+	@if $exp > 1 {
+			@for $i from 2 through $exp {
+					$val: $val * $bs;
+			}
+	}@else if $exp < 1 {
+			@for $i from 0 through -$exp {
+					$val: $val / $bs;
+			}
+	}
+	@return $val;
+}
+
+@function fact($num) {
+	$val: 1;
+	@if $num > 0 {
+			@for $i from 1 through $num {
+			$val: $val * $i;
+			}
+	}
+	@return $val;
+}
+
+@function pi() {
+	@return 3.14159265359;
+}
+
+@function rad($angle) {
+	$unit: unit($angle);
+	$val: $angle / (1 + 0 * $angle);
+	// 変数に角度(deg)が渡されていると、ラジアンに変換
+	// それ以外は、問答無用でラジアン
+	@if $unit == "deg" {
+			$val: $val / 180 * pi();
+	}
+	@return $val;
+}
+
+$accuracy: 10; // 計算精度
+
+@function sin($angle) {
+    $theta: rad($angle);
+    $sin: $theta;
+    @for $n from 1 through $accuracy {
+      $sin: $sin + pow(-1, $n) / fact(2 * $n + 1) * pow($theta, 2 * $n + 1);
+    }
+    @return $sin;
+}
+
+@function cos($angle) {
+	$theta: rad($angle);
+    $cos: 1;
+    @for $n from 1 through $accuracy {
+        $cos: $cos + pow(-1, $n) / fact(2 * $n) * pow($theta, 2 * $n);
+    }
+    @return $cos;
+}

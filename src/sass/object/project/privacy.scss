@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+@import "../../mixin";
+
+/* ----------------------------------
+
+ --  privacy
+
+---------------------------------- */
+
+#privacy {}
+
+/* ----------------------------------
+
+  --  PC
+
+ ---------------------------------- */
+
+@media #{$pc-all} {
+    #privacy {
+        #p-privacy-contents {
+            padding-top: 150px;
+
+            .p-privacy-section {
+                position: relative;
+                padding-bottom: 190px;
+
+                &__inner {
+                    margin: 0 auto;
+                    width: 1080px;
+                    position: relative;
+                    z-index: 40;
+                }
+
+            }
+
+            ul {
+                border-top: 1px solid #dcdfe7;
+                margin-bottom: 60px;
+
+                li {
+                    position: relative;
+                    line-height: 30px;
+                    padding: 30px 0;
+                    padding-left: 30px;
+                    font-size: 15px;
+                    border-bottom: 1px solid #dcdfe7;
+
+                    span.number {
+                        position: absolute;
+                        left: 0;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            p.text {
+                font-size: 15px;
+                line-height: 30px;
+            }
+
+        }
+    }
+}
+
+
+
+/* ----------------------------------
+
+  --  SMP
+
+ ---------------------------------- */
+
+@media #{$smp} {
+    #privacy {
+        #p-privacy-contents {
+            padding-top: 45px;
+
+            .p-privacy-section {
+                position: relative;
+                padding-bottom: 140px;
+
+                &__inner {
+                    margin: 0 25px;
+                    position: relative;
+                    z-index: 40;
+                }
+
+            }
+
+            ul {
+                border-top: 1px solid #dcdfe7;
+                margin-bottom: 25px;
+
+                li {
+                    position: relative;
+                    line-height: 25px;
+                    padding: 25px 0;
+                    padding-left: 35px;
+                    font-size: 13px;
+                    border-bottom: 1px solid #dcdfe7;
+
+                    span.number {
+                        position: absolute;
+                        left: 0;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            p.text {
+                font-size: 13px;
+                line-height: 25px;
+                padding-left: 35px;
+            }
+
+        }
+    }
+}
